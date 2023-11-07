@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { startTimer, stopTimer } from "../utility/timer";
+import styles from '../css/Camera.module.css'
 
 const CameraModal = ({ show, onHide }) => {
     const [showCamera, setShowCamera] = useState(true);
@@ -137,13 +138,13 @@ const CameraModal = ({ show, onHide }) => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">Upload or Record Your Video</h5>
-                            <button type="button" className="close" onClick={onHide}>
+                            <button type="button" className={styles.close} onClick={onHide}>
                                 <span>&times;</span>
                             </button>
                         </div>
                         <div className="modal-body">
                             {/* for preview video */}
-                            <video className="preview_video" id="previewVideo"
+                            <video className="preview_video"   id={styles.preview_video}
                                 style={{ display: (showPreviewVideo && !isRecording) ? "block" : "none" }}
                                 controls
                                 playsInline>
@@ -201,8 +202,8 @@ const CameraModal = ({ show, onHide }) => {
                                             {isRecording ? "Stop Recording" : "Start Recording"}
                                         </button>
                                         <video
-                                            style={{ display: stream ? "block" : "none" }}
-                                            className="camera_video"
+                                            style={{ display: stream ? "block" : "none"  }}
+                                            className={styles.camera_video}
                                             id="recordedVideo"
                                             autoPlay
                                             playsInline

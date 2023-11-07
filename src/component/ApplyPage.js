@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Modal from "./CameraModal";
-
+import styles from '../css/Apply.module.css'
 const ApplyPage = () => {
     const [showModal, setShowModal] = useState(false);
 
